@@ -12,6 +12,8 @@ class BabiesController < ApplicationController
     def create
       @baby = Baby.new(baby_params)
       if @baby.save
+        reset_session
+        log_in @baby
         flash[:success] = "Welcome to MyDaddy!"
         redirect_to @baby
       else

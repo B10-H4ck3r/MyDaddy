@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   get '/contact',  to: 'static_pages#contact'
 
   # Set Babies Paths #
-  get '/signup',   to: 'babies#new'
+  get    '/signup',   to: 'babies#new'
+  get    '/login',    to: 'sessions#new'
+  post   '/login',    to: 'sessions#create'
+  delete '/logout',   to: 'sessions#destroy'
+
 
   # Set Project Resources #
   resources :babies

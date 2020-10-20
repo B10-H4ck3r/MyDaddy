@@ -23,6 +23,7 @@ class BabiesSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'babies/show'
+    assert is_logged_in?
   end
 
 end

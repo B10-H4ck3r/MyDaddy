@@ -1,1 +1,4 @@
-# Empty for Now #
+test:
+  name: Test User
+  email: test@mydaddy.com
+  password_digest: <%= Baby.digest('password') %>
