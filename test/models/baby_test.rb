@@ -3,7 +3,7 @@ require 'test_helper'
 class BabyTest < ActiveSupport::TestCase
 
   def setup
-    @baby = Baby.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+    @baby = Baby.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", date_price: "$15.99", text_price: "$20.99")
   end
 
   test "should be valid" do
@@ -12,6 +12,26 @@ class BabyTest < ActiveSupport::TestCase
 
   test "name should be present" do
     @baby.name = "     "
+    assert_not @baby.valid?
+  end
+
+  test "text price should be present" do
+    @baby.text_price = "    "
+    assert_not @baby.valid?
+  end
+
+  test "text price should not be too long" do
+    @baby.text_price = "a" * 4
+    assert_not @baby.valid?
+  end
+
+  test "date price should be present" do
+    @baby.date_price = "    "
+    assert_not @baby.valid?
+  end
+
+  test "date price should not be too long" do
+    @baby.date_price = "a" * 4
     assert_not @baby.valid?
   end
 

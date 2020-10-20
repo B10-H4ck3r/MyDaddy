@@ -29,7 +29,9 @@ class ActionDispatch::IntegrationTest
   def log_in_as(baby, password: 'password', remember_me: '1')
     post login_path, params: { session: { email: baby.email,
                                           password: password,
-                                          remember_me: remember_me } }
+                                          remember_me: remember_me,
+                                          date_price: baby.date_price,
+                                          text_price: baby.text_price } }
   end
 
   # Add more helper methods to be used by all tests here...

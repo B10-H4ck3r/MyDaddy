@@ -52,7 +52,7 @@ class BabiesController < ApplicationController
     private
 
       def baby_params
-        params.require(:baby).permit(:name, :email, :password, :password_confirmation)
+        params.require(:baby).permit(:name, :email, :password, :password_confirmation, :date_price, :text_price)
       end
 
       # Confirms a logged-in user.

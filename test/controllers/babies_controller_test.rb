@@ -27,7 +27,9 @@ class BabiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect update when not logged in" do
     patch baby_path(@baby), params: { baby: { name: @baby.name,
-                                              email: @baby.email } }
+                                              email: @baby.email,
+                                              date_price: @baby.date_price,
+                                              text_price: @baby.text_price } }
     assert_not flash.empty?
     assert_redirected_to login_url
   end
@@ -42,7 +44,9 @@ class BabiesControllerTest < ActionDispatch::IntegrationTest
   test "should redirect update when logged in as wrong user" do
     log_in_as(@other_baby)
     patch baby_path(@baby), params: { baby: { name: @baby.name,
-                                              email: @baby.email } }
+                                              email: @baby.email,
+                                              date_price: @baby.date_price,
+                                              text_price: @baby.text_price } }
     assert flash.empty?
     assert_redirected_to root_url
   end

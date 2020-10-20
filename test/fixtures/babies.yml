@@ -2,27 +2,37 @@ test:
   name: Test User
   email: test@mydaddy.com
   password_digest: <%= Baby.digest('password') %>
+  date_price: <%= Baby.digest('date_price') %>
+  text_price: <%= Baby.digest('text_price') %>
   admin: true
 
 archer:
   name: Sterling Archer
   email: duchess@example.gov
   password_digest: <%= Baby.digest('password') %>
+  date_price: <%= Baby.digest('date_price') %>
+  text_price: <%= Baby.digest('text_price') %>
 
 
 lana:
   name: Lana Kane
   email: hands@example.gov
   password_digest: <%= Baby.digest('password') %>
+  date_price: <%= Baby.digest('date_price') %>
+  text_price: <%= Baby.digest('text_price') %>
 
 malory:
   name: Malory Archer
   email: boss@example.gov
   password_digest: <%= Baby.digest('password') %>
+  date_price: <%= Baby.digest('date_price') %>
+  text_price: <%= Baby.digest('text_price') %>
 
 <% 30.times do |n| %>
 baby_<%= n %>:
   name:  <%= "Baby #{n}" %>
   email: <%= "baby-#{n}@example.com" %>
   password_digest: <%= Baby.digest('password') %>
+  date_price: <%= Baby.digest('date_price') %>
+  text_price: <%= Baby.digest('text_price') %>
 <% end %>
