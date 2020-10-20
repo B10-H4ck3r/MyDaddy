@@ -2,3 +2,27 @@ test:
   name: Test User
   email: test@mydaddy.com
   password_digest: <%= Baby.digest('password') %>
+  admin: true
+
+archer:
+  name: Sterling Archer
+  email: duchess@example.gov
+  password_digest: <%= Baby.digest('password') %>
+
+
+lana:
+  name: Lana Kane
+  email: hands@example.gov
+  password_digest: <%= Baby.digest('password') %>
+
+malory:
+  name: Malory Archer
+  email: boss@example.gov
+  password_digest: <%= Baby.digest('password') %>
+
+<% 30.times do |n| %>
+baby_<%= n %>:
+  name:  <%= "Baby #{n}" %>
+  email: <%= "baby-#{n}@example.com" %>
+  password_digest: <%= Baby.digest('password') %>
+<% end %>

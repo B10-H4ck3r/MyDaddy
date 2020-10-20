@@ -6,10 +6,11 @@ class SessionsController < ApplicationController
   def create
     baby = Baby.find_by(email: params[:session][:email].downcase)
     if baby&.authenticate(params[:session][:password])
+      forwarding_url = session[:forwarding_url]
       reset_session
       params[:session][:remember_me] == '1' ? remember(baby) : forget(baby)
       log_in baby
-      redirect_to baby
+      redirect_to forwarding_url || baby
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'

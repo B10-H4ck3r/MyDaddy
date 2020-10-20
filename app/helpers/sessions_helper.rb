@@ -26,6 +26,13 @@ module SessionsHelper
     end
   end
 
+
+    # Returns true if the given user is the current user.
+    def current_baby?(baby)
+      baby && baby == current_baby
+    end
+
+
   # Returns true if the baby is logged in, false otherwise.
   def logged_in?
     !current_baby.nil?
@@ -49,6 +56,11 @@ module SessionsHelper
     forget(current_baby)
     reset_session
     @current_baby = nil
+  end
+
+  # Stores the URL trying to be accessed.
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
   end
 
 end

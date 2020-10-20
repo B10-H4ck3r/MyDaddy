@@ -1,0 +1,21 @@
+<% provide(:title, 'All babies') %>
+<div class="center jumbotron" style="box-shadow: 8px 8px 10px #F0F; border: 5px solid #000; background-color: rgba(255,192,203,0.8)">
+
+  <%= will_paginate %>
+
+  <ul class="babies">
+    <% @babies.each do |baby| %>
+      <li>
+        <%= gravatar_for baby, size: 50 %>
+        <%= link_to baby.name, baby %>
+        <% if current_baby.admin? && !current_baby?(baby) %>
+          | <%= link_to "delete", baby, method: :delete,
+                                        data: { confirm: "You sure?" } %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= will_paginate %>
+
+</div>
