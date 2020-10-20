@@ -16,16 +16,14 @@ module SessionsHelper
   # Returns the current logged-in baby (if any).
   def current_baby
     if (baby_id = session[:baby_id])
-      baby = Baby.find_by(id: baby_id)
-      @current_baby ||= baby if session[:session_token] == FILL_IN
+      @current_baby ||= Baby.find_by(id: baby_id)
     elsif (baby_id = cookies.encrypted[:baby_id])
-      baby = baby.find_by(id: baby_id)
+      baby = Baby.find_by(id: baby_id)
       if baby && baby.authenticated?(cookies[:remember_token])
         log_in baby
         @current_baby = baby
       end
     end
-
   end
 
   # Returns true if the baby is logged in, false otherwise.
@@ -46,7 +44,7 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
-  # Logs out the current user.
+  # Logs out the current baby.
   def log_out
     forget(current_baby)
     reset_session
