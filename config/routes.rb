@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   # Set Babies Paths #
   get '/signup',   to: 'babies#new'
+
+  # Set Project Resources #
+  resources :babies
 end

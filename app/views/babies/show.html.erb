@@ -1,0 +1,13 @@
+<% provide(:title, @baby.name) %>
+<div class="center jumbotron" style="box-shadow: 8px 8px 10px #F0F; border: 5px solid #000; background-color: rgba(255,192,203,0.8)">
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <h1>
+          <%= gravatar_for @baby %>
+          <p style="font-family: 'Sansita Swashed', cursive; font-size: 25px"><%= @baby.name %></p>
+        </h1>
+      </section>
+    </aside>
+  </div>
+</div>

@@ -4,7 +4,7 @@
     <title><%= full_title(yield(:title)) %></title>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Indie+Flower&family=Lobster&family=Playfair+Display:ital@0;1&family=Sansita+Swashed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Libre+Baskerville&family=Piazzolla:wght@100&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Libre+Baskerville&family=Piazzolla:wght@100&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,6 +14,9 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>      
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
