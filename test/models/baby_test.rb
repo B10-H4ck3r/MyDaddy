@@ -69,5 +69,9 @@ class BabyTest < ActiveSupport::TestCase
     assert_not @baby.valid?
   end
 
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @baby.authenticated?('')
+  end
+
 
 end
