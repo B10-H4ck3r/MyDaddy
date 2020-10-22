@@ -18,3 +18,25 @@ font-family: 'Libre Baskerville', serif;
 font-family: 'Piazzolla', serif;
 
 */
+
+.grvt_txt
+{
+  font-family: 'Lobster', cursive;
+  color: purple;
+  font-size: 35px;
+  text-shadow: 5px 5px 8px #FFF;
+  text-align: center;
+}
+
+.note_txt
+{
+  font-family: 'Piazzolla', serif;
+  font-size: 10px;
+  color: #FFF;
+  text-align: center;
+  background-color: rgba(0,0,0,0.8);
+  border: 3px solid gold;
+  box-shadow: 5px 5px 8px yellow;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

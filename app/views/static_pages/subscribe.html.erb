@@ -1,0 +1,36 @@
+<% provide(:title, "Subscribe") %>
+<div class="center jumbotron" style="box-shadow: 8px 8px 10px #F0F; border: 5px solid #000; background-color: rgba(255,192,203,0.8)">
+  <h1 style="font-family: 'Dancing Script', cursive; color: #FFF;">About MyDaddy</h1>
+  <h2 style="font-family: 'Sansita Swashed', cursive; text-align: center; font-size: 25px; color: #000">
+    Subscription <strong>TERMS & CONDITIONS</strong> agreement!<br/>
+    <br/>
+    In order to provide you, The Sugar Baby, with all of the abilities of MyDaddy website, you
+    will need to obtain a Subscription Module! Please Review the Subscription Terms & Conditions
+    below for a full concept of how our site operates!<br/>
+    <br/>
+    <strong><u>Basic Membership</u></strong><br/>
+    <i>
+      With our Basic Membership, you will be able to enjoy these Benefits:<br/>
+      * Date Sugar Adults!<br/>
+      * Text Sugar Adults!<br/>
+      * 95% Commission!<br/>
+    </i>
+    <strong><u>Pro Membership</u></strong><br/>
+    <i>
+      With our Pro Membership, you will be able to enjoy these Benefits:<br/>
+      * Date Sugar Adults!<br/>
+      * Text Sugar Adults!<br/>
+      * 98% Commission!<br/>
+    </i>
+    <strong><u>Combo Memberships</u></strong><br/>
+    <i>
+      With our Combo Membership, you will be able to enjoy these Benefits:<br/>
+      * Date Sugar Adults!<br/>
+      * Text Sugar Adults!<br/>
+      * 98% Commission!<br/>
+    </i><br/>
+    <% if logged_in? %>
+    <%= link_to "Subscribe Now!", edit_baby_path(current_baby) %>
+    <% end %>
+  </h2>
+</div>

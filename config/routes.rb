@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   # Set Static Page Paths #
-  get '/help',     to: 'static_pages#help'
-  get '/about',    to: 'static_pages#about'
-  get '/contact',  to: 'static_pages#contact'
+  get '/help',      to: 'static_pages#help'
+  get '/about',     to: 'static_pages#about'
+  get '/contact',   to: 'static_pages#contact'
+  get '/subscribe', to: 'static_pages#subscribe'
 
   # Set Babies Paths #
   get    '/signup',   to: 'babies#new'
