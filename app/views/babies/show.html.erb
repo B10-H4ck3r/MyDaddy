@@ -6,8 +6,24 @@
         <h1>
           <%= gravatar_for @baby %>
           <p style="font-family: 'Sansita Swashed', cursive; font-size: 25px"><%= @baby.name %></p><br/>
-          <p style="font-family: 'Piazzolla', serif; font-size: 20px;"><b>Date Me:$</b><u><i><%= @baby.date_price %></i></u><b>&nbsp; Per Hour</b></p>
-          <p style="font-family: 'Piazzolla', serif; font-size: 20px;"><b>Text Me: $</b><u><i><%= @baby.text_price %></i></u><b>&nbsp; Per Hour</b></p>
+          <table border="3px">
+            <tr>
+              <td>
+                <p style="font-family: 'Piazzolla', serif; font-size: 20px;"><b>Date Me:$</b><u><i><%= @baby.date_price %></i></u><b>&nbsp; Per Hour</b></p>
+              </td>
+              <td>
+                <p style="font-family: 'Piazzolla', serif; font-size: 20px;"><b>Text Me: $</b><u><i><%= @baby.text_price %></i></u><b>&nbsp; Per Hour</b></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= render 'babies/paypal_functions/discover_user_date' %>
+              </td>
+              <td>
+                <%= render 'babies/paypal_functions/discover_user_text' %>
+              </td>
+            </tr>
+          </table>
         </h1>
       </section>
     </aside>

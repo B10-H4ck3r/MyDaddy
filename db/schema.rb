@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_194812) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "remember_digest"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.string "date_price"
     t.string "text_price"
     t.index ["email"], name: "index_babies_on_email", unique: true

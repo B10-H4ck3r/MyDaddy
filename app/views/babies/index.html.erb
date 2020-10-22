@@ -7,10 +7,10 @@
     <% @babies.each do |baby| %>
       <li>
         <%= gravatar_for baby, size: 50 %>
-        <%= link_to baby.name, baby %>
+        <%= link_to baby.name, baby, class: 'admin_view' %>
         <% if current_baby.admin? && !current_baby?(baby) %>
-          | <%= link_to "delete", baby, method: :delete,
-                                        data: { confirm: "You sure?" } %>
+          | <%= link_to "delete", baby, method: :delete, data: { confirm: "You sure?" }, class: 'admin_delete' %>
+          | <%= link_to "pause", baby, method: '#', data: { confirm: "Pause User?" }, class: 'admin_pause' %>
         <% end %>
       </li>
     <% end %>
