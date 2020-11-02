@@ -99,7 +99,7 @@ class BabyTest < ActiveSupport::TestCase
   end
 
   test "sex should have a minimum length" do
-    @baby.sex = "a" * 7
+    @baby.sex = "a" * 9
     assert_not @baby.valid?
   end
 
