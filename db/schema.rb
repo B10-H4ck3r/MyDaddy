@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_165428) do
+ActiveRecord::Schema.define(version: 2020_11_02_213614) do
 
   create_table "babies", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_165428) do
     t.string "date_price"
     t.string "text_price"
     t.string "sex"
+    t.integer "role"
     t.index ["email"], name: "index_babies_on_email", unique: true
   end
 

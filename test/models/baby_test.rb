@@ -3,7 +3,7 @@ require 'test_helper'
 class BabyTest < ActiveSupport::TestCase
 
   def setup
-    @baby = Baby.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", date_price: "$15.99", text_price: "$20.99", sex: "Male")
+    @baby = Baby.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", date_price: "$15.99", text_price: "$20.99", sex: "Male", role: "baby")
   end
 
   test "should be valid" do

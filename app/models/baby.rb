@@ -1,5 +1,6 @@
 class Baby < ApplicationRecord
 
+  enum role: [:baby, :adult]
   has_many :microposts, dependent: :destroy
   attr_accessor :remember_token
   before_save { email.downcase! }
@@ -48,5 +49,6 @@ class Baby < ApplicationRecord
   def feed
     Micropost.where("baby_id = ?", id)
   end
+
 
 end
