@@ -4,6 +4,7 @@ class Baby < ApplicationRecord
   before_save { email.downcase! }
   validates :date_price, presence: true, length: { minimum: 5 }, allow_nil: true
   validates :text_price, presence: true, length: { minimum: 5 }, allow_nil: true
+  validates :sex, presence: true, length: { maximum: 6 }, allow_nil: true
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: true

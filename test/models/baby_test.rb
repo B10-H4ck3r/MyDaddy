@@ -3,7 +3,7 @@ require 'test_helper'
 class BabyTest < ActiveSupport::TestCase
 
   def setup
-    @baby = Baby.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", date_price: "$15.99", text_price: "$20.99")
+    @baby = Baby.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", date_price: "$15.99", text_price: "$20.99", sex: "Male")
   end
 
   test "should be valid" do
@@ -93,5 +93,14 @@ class BabyTest < ActiveSupport::TestCase
     assert_not @baby.authenticated?('')
   end
 
+  test "sex should be present (nonblank)" do
+    @baby.sex = ' ' * 6
+    assert_not @baby.valid?
+  end
+
+  test "sex should have a minimum length" do
+    @baby.sex = "a" * 7
+    assert_not @baby.valid?
+  end
 
 end
