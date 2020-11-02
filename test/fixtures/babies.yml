@@ -4,6 +4,7 @@ test:
   password_digest: <%= Baby.digest('password') %>
   date_price: <%= Baby.digest('date_price') %>
   text_price: <%= Baby.digest('text_price') %>
+  sex: <%= Baby.digest('sex') %>
   admin: true
 
 archer:
@@ -12,6 +13,7 @@ archer:
   password_digest: <%= Baby.digest('password') %>
   date_price: <%= Baby.digest('date_price') %>
   text_price: <%= Baby.digest('text_price') %>
+  sex: <%= Baby.digest('sex') %>
 
 
 lana:
@@ -20,6 +22,7 @@ lana:
   password_digest: <%= Baby.digest('password') %>
   date_price: <%= Baby.digest('date_price') %>
   text_price: <%= Baby.digest('text_price') %>
+  sex: <%= Baby.digest('sex') %>
 
 malory:
   name: Malory Archer
@@ -27,6 +30,7 @@ malory:
   password_digest: <%= Baby.digest('password') %>
   date_price: <%= Baby.digest('date_price') %>
   text_price: <%= Baby.digest('text_price') %>
+  sex: <%= Baby.digest('sex') %>
 
 <% 30.times do |n| %>
 baby_<%= n %>:
@@ -35,4 +39,5 @@ baby_<%= n %>:
   password_digest: <%= Baby.digest('password') %>
   date_price: <%= Baby.digest('date_price') %>
   text_price: <%= Baby.digest('text_price') %>
+  sex: <%= Baby.digest('sex') %>
 <% end %>

@@ -11,6 +11,7 @@ class BabiesController < ApplicationController
 
     def show
       @baby = Baby.find(params[:id])
+      @microposts = @baby.microposts.paginate(page: params[:page])
     end
 
     def new

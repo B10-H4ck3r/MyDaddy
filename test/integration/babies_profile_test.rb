@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class SessionsHelperTest < ActionView::TestCase
-  
+class BabiesProfileTest < ActionDispatch::IntegrationTest
+
 
   def setup
     @baby = babies(:test)
@@ -19,4 +19,5 @@ class SessionsHelperTest < ActionView::TestCase
       assert_match micropost.content, response.body
     end
   end
+
 end

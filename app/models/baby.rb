@@ -1,5 +1,6 @@
 class Baby < ApplicationRecord
 
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token
   before_save { email.downcase! }
   validates :date_price, presence: true, length: { minimum: 5 }, allow_nil: true
@@ -44,5 +45,8 @@ class Baby < ApplicationRecord
     remember_digest || remember
   end
 
+  def feed
+    Micropost.where("baby_id = ?", id)
+  end
 
 end

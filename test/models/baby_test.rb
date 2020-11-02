@@ -103,4 +103,12 @@ class BabyTest < ActiveSupport::TestCase
     assert_not @baby.valid?
   end
 
+  test "associated microposts should be destroyed" do
+    @baby.save
+    @baby.microposts.create!(content: "Lorem ipsum")
+    assert_difference 'Micropost.count', -1 do
+      @baby.destroy
+    end
+  end
+
 end
