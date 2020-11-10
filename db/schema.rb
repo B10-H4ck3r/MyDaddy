@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_175811) do
+ActiveRecord::Schema.define(version: 2020_11_10_194114) do
 
   create_table "babies", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 2020_11_10_175811) do
     t.string "sex"
     t.integer "role"
     t.index ["email"], name: "index_babies_on_email", unique: true
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "microposts", force: :cascade do |t|
