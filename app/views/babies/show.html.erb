@@ -7,6 +7,7 @@
           <%= gravatar_for @baby %>
           <p style="font-family: 'Sansita Swashed', cursive; font-size: 25px"><%= @baby.name %></p>
           <p style="font-family: 'Sansita Swashed', cursive; font-size: 20px"><%= @baby.sex %></p><br/>
+          <% if baby.role.baby? %>
           <table border="3px">
             <tr>
               <td>
@@ -25,6 +26,7 @@
               </td>
             </tr>
           </table>
+          <% end %>
         </h1>
       </section>
     </aside>

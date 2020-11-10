@@ -1,6 +1,6 @@
 class Baby < ApplicationRecord
 
-  enum role: [:baby, :adult]
+  enum role: [:adult, :baby]
   has_many :microposts, dependent: :destroy
   attr_accessor :remember_token
   before_save { email.downcase! }

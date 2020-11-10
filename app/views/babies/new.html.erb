@@ -13,9 +13,8 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label 'Account Type;' %>
-      <%= f.radio_button :role, placeholder: 'Adult' %><%= f.label 'Adult' %>
-      <%= f.radio_button :role, placeholder: 'Baby' %><%= f.label 'Baby' %><br/>
+      <%= f.label :role %>
+      <%= f.select :role, Baby.roles.keys %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
